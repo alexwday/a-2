@@ -36,9 +36,10 @@ wheels/
 *~
 
 # Certificates (don't commit work certificates)
-*.cer
-*.pem
-*.crt
+certs/*.cer
+certs/*.pem
+certs/*.crt
+!certs/.gitkeep
 
 # Logs
 *.log

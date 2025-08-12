@@ -8,7 +8,7 @@ A flexible LLM connector that supports both OpenAI API and internal OAuth-based 
 # Clone and setup
 git clone https://github.com/alexwday/a-2.git
 cd a-2
-./setup.sh
+./scripts/setup.sh
 
 # Configure environment
 # Edit .env with your settings (see Configuration below)
@@ -62,7 +62,7 @@ OAUTH_URL=https://auth.company.com/oauth2/token
 CLIENT_ID=your-client-id
 CLIENT_SECRET=your-client-secret
 USE_SSL=true
-CA_BUNDLE_PATH=./rbc-ca-bundle.cer
+CA_BUNDLE_PATH=./certs/rbc-ca-bundle.cer
 MODEL=gpt-4.1-2025-04-14
 ```
 
@@ -70,17 +70,21 @@ MODEL=gpt-4.1-2025-04-14
 
 ```
 /
-├── .env.example      # Configuration template
-├── .env             # Your configuration (git ignored)
 ├── main.py          # Entry point
-├── setup.sh         # Quick setup script
-├── utils/           # Authentication utilities
-│   ├── oauth_token.py
-│   └── ssl_cert.py
+├── .env.example     # Configuration template
+├── .env             # Your configuration (git ignored)
+├── README.md        # Documentation
+├── certs/           # SSL certificates
+│   └── (place .cer files here)
+├── config/          # Configuration management
+│   └── settings.py
 ├── connectors/      # LLM connectors
 │   └── openai.py
-└── config/          # Configuration management
-    └── settings.py
+├── scripts/         # Utility scripts
+│   └── setup.sh
+└── utils/           # Authentication utilities
+    ├── oauth_token.py
+    └── ssl_cert.py
 ```
 
 ## Features
