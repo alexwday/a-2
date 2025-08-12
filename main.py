@@ -6,8 +6,6 @@ from typing import List, Dict, Any
 
 from config.settings import load_environment, validate_environment, get_config
 from connectors.openai import OpenAIConnector
-from agents.coordinator import CoordinatorAgent
-from utils.monitoring import ProcessMonitor
 
 def process_conversation(messages: List[Dict[str, str]]) -> str:
     """
